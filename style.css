@@ -497,15 +497,22 @@ body {
   border-radius: 4px;
 }
 
-/* Per-cell labels */
-.breakdown-table td:nth-child(2)::before { content: 'English'; }
-.breakdown-table td:nth-child(3)::before { content: 'Grammar'; }
-.breakdown-table td:last-child::before   { content: 'Tip'; }
-
-/* Column colors */
-.breakdown-table td:nth-child(2) {
+.breakdown-table td.breakdown-word .breakdown-en {
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: 400;
   color: #60a5fa;
 }
+
+.breakdown-table td.breakdown-word .breakdown-en::before {
+  content: '|';
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+/* Per-cell labels */
+.breakdown-table td:nth-child(2)::before { content: 'Grammar'; }
+.breakdown-table td:last-child::before   { content: 'Tip'; }
 
 .breakdown-table td:last-child {
   color: #8ecfb3;

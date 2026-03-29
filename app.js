@@ -385,10 +385,17 @@
         }
       });
       tdWord.appendChild(wordSpan);
+
+      // English meaning inline next to French word
+      var enSpan = document.createElement('span');
+      enSpan.className = 'breakdown-en';
+      enSpan.textContent = entry.en || '';
+      tdWord.appendChild(enSpan);
+
       row.appendChild(tdWord);
 
-      // English, Grammar, Tip
-      ['en', 'grammar', 'tip'].forEach(function (key) {
+      // Grammar, Tip
+      ['grammar', 'tip'].forEach(function (key) {
         var td = document.createElement('td');
         td.textContent = entry[key] || '';
         row.appendChild(td);
